@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body{
+  background-color: black;
+  background-image: linear-gradient(to bottom, #010319 0%, #264b6d 100%);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: Arial;
+  overflow: hidden;
+}
+
+#render-canvas {
+  display: block;
+}
+
+.ui-elements {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.present-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  background-color: rgba(255,255,255,.1);
+  border-radius: 1000px;
+  border: 3px solid green;
+}
+
+.present-button img {
+  width: 64px;
+  height: 64px;
+}
+
+#spirit {
+  color: white;
+  font-size: 38px;
+  position: absolute;
+  top: 19px;
+  left: 19px;
+}
+
+.notification {
+  background: white;
+  display: none;
+  width: 30%;
+  min-width: 250px;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.notification.shown {
+  display: block;
+}

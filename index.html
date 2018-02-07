@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="css/main.css" rel="stylesheet" />
+	</head>
+	<body>
+		<canvas id="render-canvas"></canvas>
+		<!-- <div class="present-button">
+			<img src="images/gift.png">
+		</div> -->
+		<div class='ui-elements'>
+			<div id="spirit">0</div>
+			<div id="crash-notification" class="notification">
+				<p>You crashed.</p>
+				<p>You raised <span id="final-score"></span> Christmas Spirit.</p>
+				<button id="restart-button">Start Again</button>
+			</div>
+			<div id="pause-notification" class="notification">
+				<p>Game Paused</p>
+				<button id="resume-button">Resume Game</button>
+			</div>
+		</div>
+	</body>
+
+	<script src="js/canvas.js"></script>
+	<script src="js/utils/utils.js"></script>
+	<script src="js/utils/radio.js"></script>
+	<script src="js/controls.js"></script>
+	<script src="js/game-objects/present.js"></script>
+	<script src="js/game-objects/sleigh.js"></script>
+	<script src="js/game-objects/house.js"></script>
+	<script src="js/game-objects/star-field.js"></script>
+	<script src="js/game.js"></script>
+	<script>
+		(function(){
+			var game = new Game();
+
+			Game.ELEMENTS.restartButton.addEventListener('click', restartPlay);
+			function restartPlay() {
+				removeClass(Game.ELEMENTS.crashNotification, 'shown');
+				game.reset();
+			}
+
+			Game.ELEMENTS.resumeButton.addEventListener('click', game.resume.bind(game));
+
+		})();
+
+	</script>
+
+</html>
